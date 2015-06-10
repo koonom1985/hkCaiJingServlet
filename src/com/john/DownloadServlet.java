@@ -35,7 +35,7 @@ public class DownloadServlet extends HttpServlet{
         fileName=fileName+".mp3";
         try {
             stream = response.getOutputStream();
-            File mp3 = new File("/Users/john/Downloads" + "/" + fileName);
+            File mp3 = new File("/home/jenkins/jenkins-home/workspace/hkcaijin" + "/" + fileName);
 
             //set response headers
             response.setContentType("audio/mpeg");
@@ -46,7 +46,7 @@ public class DownloadServlet extends HttpServlet{
 
             FileInputStream input = new FileInputStream(mp3);
             buf = new BufferedInputStream(input);
-            int readBytes = 0;
+            int readBytes;
             //read from the file; write to the ServletOutputStream
             while ((readBytes = buf.read()) != -1)
                 stream.write(readBytes);
