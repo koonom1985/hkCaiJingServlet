@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <servlet>
+        <servlet-name>Download Servlet</servlet-name>
+        <servlet-class>com.john.DownloadServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Play Servlet</servlet-name>
+        <servlet-class>com.john.PlayServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Download Servlet</servlet-name>
+        <url-pattern>/download</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>Play Servlet</servlet-name>
+        <url-pattern>/play</url-pattern>
+    </servlet-mapping>
+</web-app>
