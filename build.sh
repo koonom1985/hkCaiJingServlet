@@ -11,4 +11,4 @@ cp ./classes/com/john/DownloadServlet.class ~/tomcat/webapps/hkcaijing/WEB-INF/c
 cp ./classes/com/john/PlayServlet.class ~/tomcat/webapps/hkcaijing/WEB-INF/classes/com/john/
 
 echo "cp web.xml"
-cp ./WEB-INF/web.xml ~/tools/tomcat/webapps/servlet/WEB-INF/
+cp ./WEB-INF/web.xml ~/tomcat/webapps/servlet/WEB-INF/
