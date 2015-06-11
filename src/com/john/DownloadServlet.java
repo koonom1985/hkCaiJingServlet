@@ -11,20 +11,17 @@ public class DownloadServlet extends HttpServlet{
 
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException, ServletException {
-//        PrintWriter out = response.getWriter();
-//        out.println("<html>");
-//        out.println("<body>");
-//        out.println("<h1>Hello Servlet Get</h1>");
-//        out.println("</body>");
-//        out.println("</html>");
-
         String fileName = request.getParameter("filename");
 
         if(fileName==null || "".equals(fileName.trim())) {
             PrintWriter out = response.getWriter();
             out.println("<html>");
             out.println("<body>");
-            out.println("<h1>Please input filename parameter</h1>");
+            out.println("<form style='width: 300px;margin: 0 auto;'>");
+            out.println("Please input filename :");
+            out.println("<br><input type='text' name='filename' value='104_201506110930'>");
+            out.println("<br><input type='submit' value='Submit'>");
+            out.println("</form>");
             out.println("</body>");
             out.println("</html>");
             return;
@@ -36,6 +33,9 @@ public class DownloadServlet extends HttpServlet{
         try {
             stream = response.getOutputStream();
             File mp3 = new File("/home/jenkins/jenkins-home/workspace/hkcaijin" + "/" + fileName);
+
+            if (mp3==null || mp3.length()==0)
+                response.sendError(response.SC_NO_CONTENT,"no file found");
 
             //set response headers
             response.setContentType("audio/mpeg");
@@ -51,7 +51,8 @@ public class DownloadServlet extends HttpServlet{
             while ((readBytes = buf.read()) != -1)
                 stream.write(readBytes);
         } catch (IOException ioe) {
-            throw new ServletException(ioe.getMessage());
+            System.err.println(ioe);
+//            throw new ServletException(ioe.getMessage());
         } finally {
             if (stream != null)
                 stream.close();

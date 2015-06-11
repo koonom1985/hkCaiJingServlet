@@ -3,6 +3,7 @@
 export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 
 echo "javac classes"
+mkdir classes
 javac src/com/john/DownloadServlet.java -cp ./lib/javaee.jar -d classes
 javac src/com/john/PlayServlet.java -cp ./lib/javaee.jar -d classes
 
