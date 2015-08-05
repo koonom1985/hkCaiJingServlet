@@ -1,5 +1,6 @@
+#!/usr/bin/env bash
 
-t_url="http://testmp3.http.akamai-trials.com"
+root_url="http://testmp3.http.akamai-trials.com"
 prefix="104"
 
 if [[ -n "$1" ]]; then
