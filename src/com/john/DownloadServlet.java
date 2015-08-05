@@ -19,7 +19,7 @@ public class DownloadServlet extends HttpServlet{
             out.println("<body>");
             out.println("<form style='width: 300px;margin: 0 auto;'>");
             out.println("Please input filename :");
-            out.println("<br><input type='text' name='filename' value='104_201506110930'>");
+            out.println("<br><input type='text' name='filename' value='104_201508010930'>");
             out.println("<br><input type='submit' value='Submit'>");
             out.println("</form>");
             out.println("</body>");
