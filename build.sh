@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
+export JAVA_HOME=/usr/lib/jvm/java-7-oracle
 
 echo "javac classes"
 mkdir classes
