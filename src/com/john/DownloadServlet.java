@@ -32,7 +32,7 @@ public class DownloadServlet extends HttpServlet{
         fileName=fileName+".mp3";
         try {
             stream = response.getOutputStream();
-            File mp3 = new File("/home/jenkins/jenkins-home/workspace/hkcaijin" + "/" + fileName);
+            File mp3 = new File("/home/jenkins/.jenkins/jobs/hkCaiJingServlet/workspace" + "/" + fileName);
 
             if (mp3==null || mp3.length()==0)
                 response.sendError(response.SC_NO_CONTENT,"no file found");
