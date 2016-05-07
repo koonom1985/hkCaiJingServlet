@@ -9,6 +9,13 @@ else
     today=`date +%Y%m%d`
 fi
 
+if [ -d "$today" ];then
+	echo "$today exist"
+else
+	echo "$today not exist"
+	echo `mkdir $today`
+fi
+
 echo $root_url
 echo $prefix
 echo $today
@@ -19,7 +26,7 @@ for t in "${timearr[@]}"
 do
     out=$?
     if [[ $out -eq 0 ]]; then
-        `wget -c $root_url/$prefix/$today/"$prefix"_"$today""$t".mp3` || break
+        `wget -c $root_url/$prefix/$today/"$prefix"_"$today""$t".mp3 -P ./$today/` || break
         echo "this is out status:"$out
     fi
 done
